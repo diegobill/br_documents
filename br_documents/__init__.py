@@ -69,6 +69,8 @@ class CPF(object):
             self.cpf = ''.join([str(x) for x in cpf if x not in ('-', '.')])
         elif isinstance(cpf, (int, long)):
             self.cpf = str(int(cpf))
+        else:
+            self.cpf = str(cpf)
 
         if not self.cpf.isdigit():
             raise InvalidCPF(self.error_messages['only_digits'])
